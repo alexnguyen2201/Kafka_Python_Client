@@ -18,3 +18,24 @@ brew install librdkafka
  ```console
  pipenv install confluent-kafka
  ```
+
+## Create Topic
+Create a new topic, `purchases`, which we will use to produce and consume events.
+```console
+docker compose exec broker \
+  kafka-topics --create \
+    --topic purchases \
+    --bootstrap-server localhost:9092 \
+    --replication-factor 1 \
+    --partitions 1
+ ```
+ 
+
+## Run Consumer
+```console
+python consumer.py getting_started.ini
+```
+## Run Producer
+```console
+python producer.py getting_started.ini
+```
