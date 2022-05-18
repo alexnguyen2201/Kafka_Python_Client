@@ -1,3 +1,4 @@
+https://developer.confluent.io/get-started/python/
 # Kafka_Python_Client
 ```console
 brew install librdkafka
